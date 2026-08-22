@@ -1050,6 +1050,17 @@ async def favicon():
     return Response(content=_FAVICON_PNG, media_type="image/png")
 
 
+# --- 402index.io domain claim verification (POST /api/v1/claim, 2026-08-22
+#     -- token persisted in memory agent_verification_api_402index_claim_2026_08_22) ---
+_NEXUS_402INDEX_VERIFY_HASH = "568c28c2a01a12ce5177c4a9f5be47e0ca1e8989ba0ccff91d89c16e2b729eff"
+
+
+@app.get("/.well-known/402index-verify.txt", include_in_schema=False)
+async def _nexus_402index_verify():
+    from fastapi.responses import PlainTextResponse
+    return PlainTextResponse(content=_NEXUS_402INDEX_VERIFY_HASH)
+
+
 @app.get("/.well-known/agent-card.json", include_in_schema=False)
 async def agent_card() -> dict:
     base = f"https://{_public_domain}" if _public_domain != "*" else "https://agent-verification-api.example"
