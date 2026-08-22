@@ -1,0 +1,5 @@
+.env
+env-vars.deploy.yaml
+__pycache__/
+*.pyc
+.venv/
