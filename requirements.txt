@@ -1,0 +1,8 @@
+dnspython==2.7.0
+fastapi==0.141.1
+httpx==0.28.1
+mcp==1.28.1
+pydantic==2.13.4
+python-dotenv==1.2.3
+uvicorn==0.52.4
+x402[evm,fastapi,mcp]==2.15.0
